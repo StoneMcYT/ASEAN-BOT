@@ -4,7 +4,7 @@
 This is where you will find the StoneMc Networks discord bots source code
 The offical source code from the admins
 
-Authors: CookieGMVN, StoneMc, S4ge_Rites
+Authors: CookieGMVN, StoneMc
 
 Requirments
 NPM 
