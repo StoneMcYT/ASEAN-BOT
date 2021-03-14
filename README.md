@@ -1,8 +1,5 @@
-# StoneMcNetwork
+# ASEAN BTE
 
-
-This is where you will find the StoneMc Networks discord bots source code
-The offical source code from the admins
 
 Authors: CookieGMVN, StoneMc
 
