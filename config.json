@@ -1,5 +1,5 @@
 {
-	"token": "BOT-TOKEN",
+	"token": "bottoken",
 	"prefix": "/",
 	"version": "0.3.2",
 	"status": "Beta",

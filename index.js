@@ -175,7 +175,21 @@ client.on('guildMemberAdd', async member => {
 	  message.reply('There was an error trying to execute that command!');
 	}
   }); 
+//simple hi auto resonder
 
+client.on('message', message => {
+
+if (message.content === 'Hi') {
+	message.channel.send('Hi :)');
+}
+});
+client.on('message', message => {
+
+	if (message.content === 'hi') {
+		message.channel.send('Hi :)');
+	}
+	});
+	
 
 client.login(token) //login to the bot use token from config.json
 
