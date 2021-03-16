@@ -184,12 +184,17 @@ if (message.content === 'Hi') {
 }
 });
 client.on('message', message => {
-
 	if (message.content === 'hi') {
 		message.channel.send('Hi :)');
 	}
 	});
-	
+client.on('message', message => {
+		if (message.content === prefix + 'aseanHQ') {
+			message.channel.send({
+				files: ['photos/ASEANhq2.png']
+			});
+		}});
+			
 
 client.login(token) //login to the bot use token from config.json
 
