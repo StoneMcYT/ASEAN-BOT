@@ -5,7 +5,6 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const moment = require('moment');
-const Canvas = require('canvas');
 const cron = require('cron');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var ip2 = 'asean.my.to';
@@ -77,41 +76,6 @@ client.on('message', message => {
 	}
 });
 
-//canvas
-client.on('guildMemberAdd', async member => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'stonetests');
-	if (!channel) return;
-  
-	const canvas = Canvas.createCanvas(700, 250);
-	const ctx = canvas.getContext('2d');
-  
-	const background = await Canvas.loadImage('./photos/wallpaper.jpg');
-	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  
-	ctx.strokeStyle = '#74037b';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-  
-	ctx.font = '28px sans-serif';
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText('Welcome to the StoneMcNetwork,', canvas.width / 2.5, canvas.height / 3.5);
-  
-	ctx.font = applyText(canvas, `${member.displayName}!`);
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
-  
-	ctx.beginPath();
-	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
-  
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25, 25, 200, 200);
-  
-	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-  
-	channel.send(`Welcome to ASEAN BTE, ${member}!`, attachment);
-  }); 
-  
   //event listener
   client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -148,7 +112,7 @@ client.on('guildMemberAdd', async member => {
 				const Embed = new Discord.MessageEmbed()
 	  .setColor('#00FFF')
 	  .setTitle('ASEAN BTE')
-	  .setImage("https://cdn.vox-cdn.com/thumbor/3Y-cQ6fNNy_gmXC7G9aeTQZZ_8g=/0x0:767x431/920x613/filters:focal(323x155:445x277):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63226878/0fe20042_0bb8_4781_82f4_7130f928b021.0.jpg")
+	  .setImage('https://buildtheearth.net/uploads/949691e10bf0c009fbe0f6f63f829f08d2e6d483.jpeg')
 	  .addFields(
 		{ name: 'Total member:', value: `${message.guild.memberCount} `},
 		{ name: 'Server name:', value: `${message.guild.name}` },

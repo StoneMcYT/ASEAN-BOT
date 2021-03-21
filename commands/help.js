@@ -8,7 +8,7 @@ module.exports = {
 		const Help = new Discord.MessageEmbed()
 		.setColor('#00FFFF')
 		.setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
-		.setTitle('A cool help for StoneMc Bot!')
+		.setTitle('A cool help for ASEAN BTE')
 		.addFields(
 			{ name: "Prefix", value: "m!" },
 			{ name: "Commands", value: "/ping\n/rule\n/ip\n/8ball\n/	avatar" },
