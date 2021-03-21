@@ -112,7 +112,7 @@ client.on('message', message => {
 				const Embed = new Discord.MessageEmbed()
 	  .setColor('#00FFF')
 	  .setTitle('ASEAN BTE')
-	  .setImage('https://buildtheearth.net/uploads/949691e10bf0c009fbe0f6f63f829f08d2e6d483.jpeg')
+	  .setImage('https://i.imgur.com/5DZueQQ.jpg')
 	  .addFields(
 		{ name: 'Total member:', value: `${message.guild.memberCount} `},
 		{ name: 'Server name:', value: `${message.guild.name}` },
@@ -152,13 +152,10 @@ client.on('message', message => {
 		message.channel.send('Hi :)');
 	}
 	});
-client.on('message', message => {
-		if (message.content === prefix + 'aseanHQ') {
-			message.channel.send({
-				files: ['photos/ASEANhq2.png']
-			});
-		}});
+
 			
+
+
 
 client.login(token) //login to the bot use token from config.json
 
