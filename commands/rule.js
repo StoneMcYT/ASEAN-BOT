@@ -23,3 +23,5 @@ const Rules = new Discord.MessageEmbed()
    message.channel.send(Rules);
 }
 }
+
+//pog comment
