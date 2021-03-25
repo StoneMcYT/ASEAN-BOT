@@ -47,7 +47,7 @@ function checkStatus(data){
 			return "The server is offline.";
 		}
 		else {
-			return "The MC server is online, players currently online: " + data.players.now + " /" + data.players.max + " IP - asean.my.to";
+			return "The MC server is online, players currently online: " + data.players.now + " /" + data.players.max + " IP - a";
 		}
 
 	} else {
