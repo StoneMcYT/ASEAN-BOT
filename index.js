@@ -8,7 +8,7 @@ const moment = require('moment');
 const cron = require('cron');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var ip2 = 'asean.my.to';
-
+const WOKCommands = require('wokcommands')
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -19,18 +19,31 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
+const guildId = '702883639574396969'
+
 client.once("ready", () => {
   console.log(client.user.username + ' has started');
-  const date = moment().format('lll');
-  client.user.setActivity('Started at ' + date, {
-  type: "PLAYING",
-  });
+  //const date = moment().format('lll');
+  //client.user.setActivity('Started at ' + date, {
+  //type: "PLAYING",
+  //});
 });
+//WOK slash commands
+
+client.on('ready', () => {
+  new WOKCommands(client, {
+    commandsDir: 'commands',
+    testServers: [guildId],
+    showWarns: false,
+  })
+})
+
+
 //covid count code test
 const axios = require('axios');
 const countries = require("./countries.json");
 const url = 'https://api.covid19api.com/total/country/';
-const WAKE_COMMAND = '!cases';
+const WAKE_COMMAND = '/cases';
 client.on('message', async (msg) => {
   const content = msg.content.split(/[ ,]+/);
   if(content[0] === WAKE_COMMAND){
