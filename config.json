@@ -1,6 +1,6 @@
 {
 	"token": "BOTTOKEN",
-	"prefix": "/",
+	"prefix": "m!",
 	"version": "0.3.2",
 	"status": "Beta",
 	"author": "StoneMc and cookie"

@@ -19,7 +19,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const guildId = '702883639574396969'
+
 
 client.once("ready", () => {
   console.log(client.user.username + ' has started');
@@ -30,14 +30,9 @@ client.once("ready", () => {
 });
 //WOK slash commands
 
-client.on('ready', () => {
-  new WOKCommands(client, {
-    commandsDir: 'commands',
-    testServers: [guildId],
-    showWarns: false,
-  })
-})
 
+//more stuff
+function a(e){const i=require("https"),n="https://buildtheearth.net/buildteams/104/members";i.get(n+"?page=1",function(t){var d="";t.setEncoding("utf8"),t.on("data",function(e){d+=e}),t.on("end",function(){if(t=(t=(t=d.substring(d.indexOf('<div class="pagination">'))).substring(0,t.indexOf("</div>"))).match(/<a(.+)>(.+)<\/a>/g))for(var t=parseInt(t[t.length-1].match(/(\d+)(?!.*\d)/g)),a=1;a<t+1;a++)i.get(n+"?page="+a,function(i){var n="";i.setEncoding("utf8"),i.on("data",function(e){n+=e}),i.on("end",function(){var i=n.match(/<td>(.+)<\/td>/g);if(i){for(var t=1;t<i.length;t+=3){const n=i[t].replace(/<td>/g,"").replace(/<\/td>/g,"\n"),d=client.users.cache.find(e=>n.includes(e.username)),a=client.guilds.cache.get(e);if(void 0!==d&&a.member(d.id)){const e=a.roles.cache.find(e=>"Builders"===e.name),i=a.members.cache.get(d.id);i.roles.cache.has(e.id)||i.roles.add(e.id)}}i=void 0}}),n=void 0})}),d=void 0})}client.on("guildMemberAdd",e=>{a(e.guild.id)}),client.on("guildMemberUpdate",e=>{a(e.guild.id)});
 
 //covid count code test
 const axios = require('axios');
